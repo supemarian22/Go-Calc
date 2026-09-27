@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>GO Calc — Kalkulator Pokémon GO</title>
+	<link rel="icon" type="image/svg+xml" href="logo.svg">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="app-shell">
+		<main class="content" id="top">
+			<section class="go-now-grid" aria-label="Kalkulator Pokémon GO">
+				<article class="intel-card search-card" id="calcPanel">
+					<div class="calc-brand"><img class="brand-logo" src="logo.svg" alt=""><span>GO <b>Calc</b></span></div>
+					<div class="intel-head"><div><p class="eyebrow">POKÉMON GO · CP / IV · <span id="databaseCount">63</span> POKÉMONÓW I FORM</p><h2>Kalkulator Pokémonów</h2></div></div>
+					<label class="search-label" for="pokemonSearch">Pokémon</label>
+					<div class="autocomplete"><div class="search-box"><input id="pokemonSearch" type="search" placeholder="Wpisz nazwę lub numer, np. Mewtwo" autocomplete="off"><button id="clearSearch" type="button" aria-label="Wyczyść wyszukiwanie">×</button></div><div class="suggestions" id="suggestions" role="listbox"></div></div>
+					<div id="selectedPokemon"><p class="calc-hint">Wybierz Pokémona z podpowiedzi, aby zacząć.</p></div>
+					<div class="calc-controls">
+						<div class="control-heading"><label for="levelRange">Poziom Pokémona</label><output id="levelValue">20</output></div>
+						<input id="levelRange" type="range" min="1" max="50" step="0.5" value="20">
+						<div class="level-ends"><span>1</span><span>50</span></div>
+						<div class="iv-grid"><label>IV ATK<input id="ivAttack" type="number" min="0" max="15" value="15"></label><label>IV DEF<input id="ivDefense" type="number" min="0" max="15" value="15"></label><label>IV HP<input id="ivStamina" type="number" min="0" max="15" value="15"></label></div>
+						<label class="buddy-toggle"><input id="bestBuddy" type="checkbox"><span>Best Buddy</span><small>aktywny bonus +1 poziom</small></label>
+					</div>
+					<div class="cp-result" id="cpResult"><span class="cp-placeholder">Twoje wyniki pojawią się tutaj</span></div>
+					<details class="advanced-options"><summary>Więcej opcji i statystyk</summary><fieldset class="form-field"><legend>Pokémon</legend><div class="form-options"><label><input type="radio" name="pokemonForm" value="normal" checked><span>Normal</span></label><label><input type="radio" name="pokemonForm" value="shadow"><span>Shadow</span></label><label><input type="radio" name="pokemonForm" value="purified"><span>Purified</span></label></div></fieldset><div class="power-up"><div class="power-heading"><div><p class="eyebrow">POWER UP</p><strong>CP przed i po ulepszeniu</strong></div><label for="targetLevel">Do poziomu</label></div><select id="targetLevel" aria-label="Docelowy poziom"></select><label class="lucky-toggle"><input id="luckyPokemon" type="checkbox"><span>Lucky Pokémon</span><small>koszt Stardustu −50%</small></label><div class="power-result" id="powerResult"><span>Wybierz Pokémona</span></div></div><div id="advancedResult"></div></details>
+				</article>
+			</section>
+		</main>
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>
